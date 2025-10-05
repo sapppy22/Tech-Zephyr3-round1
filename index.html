@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TechAtheist - Modern Digital Agency Landing Page">
+    <title>TechAtheist - Digital Innovation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+
+    <!-- Loading Screen -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-bolt"></i>
+                    <span>TechAtheist</span>
+                </div>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#stats" class="nav-link">Stats</a></li>
+                    <li><a href="#process" class="nav-link">Process</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#clients" class="nav-link">Clients</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section - Interactive & Modernized -->
+        <section class="hero" id="home">
+            <!-- Parallax Background Layers -->
+            <div class="hero-background">
+                <div class="parallax-layer parallax-layer-1" data-speed="0.5"></div>
+                <div class="parallax-layer parallax-layer-2" data-speed="0.3"></div>
+                <div class="parallax-layer parallax-layer-3" data-speed="0.1"></div>
+            </div>
+            
+            <!-- Interactive Illustrations Container (Always visible in background) -->
+            <div class="illustrations-container">
+                <!-- Reports Illustration -->
+                <div class="illustration" id="reports-illustration" data-word="reports">
+                    <div class="illustration-card">
+                        <div class="illustration-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="illustration-content">
+                            <h3>Advanced Reports</h3>
+                            <p>AI-powered analytics</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forecasts Illustration -->
+                <div class="illustration" id="forecasts-illustration" data-word="forecasts">
+                    <div class="illustration-card">
+                        <div class="illustration-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="illustration-content">
+                            <h3>Smart Forecasts</h3>
+                            <p>Predictive analytics</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboards Illustration -->
+                <div class="illustration" id="dashboards-illustration" data-word="dashboards">
+                    <div class="illustration-card">
+                        <div class="illustration-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="illustration-content">
+                            <h3>Dynamic Dashboards</h3>
+                            <p>Real-time insights</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consolidations Illustration -->
+                <div class="illustration" id="consolidations-illustration" data-word="consolidations">
+                    <div class="illustration-card">
+                        <div class="illustration-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="illustration-content">
+                            <h3>Consolidations</h3>
+                            <p>Unified data views</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <!-- AI Badge -->
+                    <div class="ai-badge reveal-text">
+                        <i class="fas fa-sparkles"></i>
+                        <span>Now with AI-Insights</span>
+                    </div>
+                    
+                    <!-- Interactive Hero Title -->
+                    <h1 class="hero-title interactive-hero-title">
+                        <span class="title-line reveal-text">
+                            Create
+                            <span class="interactive-word" data-target="reports-illustration">
+                                reports
+                                <span class="word-underline"></span>
+                            </span>,
+                        </span>
+                        <span class="title-line reveal-text">
+                            <span class="interactive-word" data-target="forecasts-illustration">
+                                forecasts
+                                <span class="word-underline"></span>
+                            </span>,
+                            <span class="interactive-word" data-target="dashboards-illustration">
+                                dashboards
+                                <span class="word-underline"></span>
+                            </span>
+                        </span>
+                        <span class="title-line reveal-text">
+                            &
+                            <span class="interactive-word" data-target="consolidations-illustration">
+                                consolidations
+                                <span class="word-underline"></span>
+                            </span>
+                        </span>
+                    </h1>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="hero-cta reveal-text">
+                        <button class="btn btn-primary btn-large ripple-effect">
+                            Start 14-day free trial
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Trust Badges - Simplified -->
+                    <div class="trust-badges reveal-text">
+                        <div class="trust-item">
+                            <i class="fas fa-star"></i>
+                            <span>4.8 on Capterra</span>
+                        </div>
+                        <div class="trust-separator">•</div>
+                        <div class="trust-item">
+                            <i class="fas fa-star"></i>
+                            <span>4.8 on G2</span>
+                        </div>
+                        <div class="trust-separator">•</div>
+                        <div class="trust-item">
+                            <i class="fas fa-users"></i>
+                            <span>350+ reviews</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <span>Scroll to explore</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Services Section (carousel switch.mp4, cards.png) -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-tag">Our Services</span>
+                    <h2 class="section-title">What We Offer</h2>
+                    <p class="section-description">
+                        Comprehensive digital solutions tailored to your needs
+                    </p>
+                </div>
+
+                <div class="carousel-container">
+                    <div class="carousel" id="servicesCarousel">
+                        <div class="carousel-track">
+                            <div class="service-card scroll-reveal">
+                                <div class="card-icon">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <h3>Web Development</h3>
+                                <p>Custom websites built with cutting-edge technologies for optimal performance and user experience.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Responsive Design</li>
+                                    <li><i class="fas fa-check"></i> Fast Loading</li>
+                                    <li><i class="fas fa-check"></i> SEO Optimized</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-card scroll-reveal">
+                                <div class="card-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h3>Mobile Apps</h3>
+                                <p>Native and cross-platform mobile applications that engage users and deliver seamless experiences.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> iOS & Android</li>
+                                    <li><i class="fas fa-check"></i> Cloud Integration</li>
+                                    <li><i class="fas fa-check"></i> Push Notifications</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-card scroll-reveal">
+                                <div class="card-icon">
+                                    <i class="fas fa-paint-brush"></i>
+                                </div>
+                                <h3>UI/UX Design</h3>
+                                <p>Beautiful, intuitive interfaces designed with user psychology and conversion optimization in mind.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> User Research</li>
+                                    <li><i class="fas fa-check"></i> Wireframing</li>
+                                    <li><i class="fas fa-check"></i> Prototyping</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-card scroll-reveal">
+                                <div class="card-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3>Digital Marketing</h3>
+                                <p>Data-driven marketing strategies that boost your online presence and drive measurable growth.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> SEO & SEM</li>
+                                    <li><i class="fas fa-check"></i> Social Media</li>
+                                    <li><i class="fas fa-check"></i> Analytics</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-card scroll-reveal">
+                                <div class="card-icon">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <h3>Cloud Solutions</h3>
+                                <p>Scalable cloud infrastructure and migration services for modern, flexible business operations.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> AWS & Azure</li>
+                                    <li><i class="fas fa-check"></i> DevOps</li>
+                                    <li><i class="fas fa-check"></i> Security</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-card scroll-reveal">
+                                <div class="card-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h3>AI Integration</h3>
+                                <p>Harness the power of artificial intelligence to automate processes and gain insights.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Machine Learning</li>
+                                    <li><i class="fas fa-check"></i> Chatbots</li>
+                                    <li><i class="fas fa-check"></i> Predictive Analytics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev" id="prevBtn" aria-label="Previous slide">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" id="nextBtn" aria-label="Next slide">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="carousel-indicators" id="carouselIndicators"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section (stats.png) -->
+        <section class="stats" id="stats">
+            <div class="container">
+                <div class="stats-grid scroll-reveal">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-number" data-target="500">0</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="stat-number" data-target="1200">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="stat-number" data-target="45">0</div>
+                        <div class="stat-label">Awards Won</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-number" data-target="10">0</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section (scroll and pop up.mp4) -->
+        <section class="process" id="process">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-tag">Our Process</span>
+                    <h2 class="section-title">How We Work</h2>
+                    <p class="section-description">
+                        A proven methodology that delivers exceptional results
+                    </p>
+                </div>
+
+                <div class="process-timeline">
+                    <div class="process-step scroll-reveal">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <div class="step-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>Discovery & Research</h3>
+                            <p>We dive deep into understanding your business, goals, and target audience to create a solid foundation.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step scroll-reveal">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <div class="step-icon">
+                                <i class="fas fa-pencil-ruler"></i>
+                            </div>
+                            <h3>Design & Prototype</h3>
+                            <p>Our designers create stunning visuals and interactive prototypes for your review and feedback.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step scroll-reveal">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <div class="step-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>Development</h3>
+                            <p>Expert developers bring designs to life with clean, efficient code and cutting-edge technologies.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step scroll-reveal">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <div class="step-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>Launch & Support</h3>
+                            <p>We deploy your project and provide ongoing support to ensure continued success and growth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section (testimonials.mp4) -->
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-tag">Testimonials</span>
+                    <h2 class="section-title">What Our Clients Say</h2>
+                    <p class="section-description">
+                        Don't just take our word for it
+                    </p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card scroll-reveal">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "TechAtheist transformed our outdated website into a modern masterpiece. The team's attention to detail and creativity exceeded our expectations!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>CEO, InnovateTech</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card scroll-reveal">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Working with TechAtheist was a game-changer for our business. Their expertise in mobile app development helped us reach new customers."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <p>Founder, RetailPro</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card scroll-reveal">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Professional, responsive, and innovative. TechAtheist delivered our project on time and within budget. Highly recommend!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Emily Rodriguez</h4>
+                                <p>Marketing Director, GrowthHub</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clients Section (customer-section.mp4) -->
+        <section class="clients" id="clients">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-tag">Our Clients</span>
+                    <h2 class="section-title">Trusted By Industry Leaders</h2>
+                </div>
+
+                <div class="clients-marquee">
+                    <div class="clients-track">
+                        <div class="client-logo">
+                            <i class="fab fa-google"></i>
+                            <span>Google</span>
+                        </div>
+                        <div class="client-logo">
+                            <i class="fab fa-microsoft"></i>
+                            <span>Microsoft</span>
+                        </div>
+                        <div class="client-logo">
+                            <i class="fab fa-apple"></i>
+                            <span>Apple</span>
+                        </div>
+                        <div class="client-logo">
+                            <i class="fab fa-amazon"></i>
+                            <span>Amazon</span>
+                        </div>
+                        <div class="client-logo">
+                            <i class="fab fa-facebook"></i>
+                            <span>Meta</span>
+                        </div>
+                        <div class="client-logo">
+                            <i class="fab fa-spotify"></i>
+                            <span>Spotify</span>
+                        </div>
+                        <div class="client-logo">
+                            <i class="fab fa-netflix"></i>
+                            <span>Netflix</span>
+                        </div>
+                        <div class="client-logo">
+                            <i class="fab fa-airbnb"></i>
+                            <span>Airbnb</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content scroll-reveal">
+                    <h2>Ready to Start Your Project?</h2>
+                    <p>Let's create something amazing together</p>
+                    <button class="btn btn-primary btn-large ripple-effect">
+                        Get In Touch
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-bolt"></i>
+                        <span>TechAtheist</span>
+                    </div>
+                    <p>Creating digital experiences that inspire and engage.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Web Development</a></li>
+                        <li><a href="#services">Mobile Apps</a></li>
+                        <li><a href="#services">UI/UX Design</a></li>
+                        <li><a href="#services">Digital Marketing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#clients">Clients</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for updates and insights</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email" required aria-label="Email for newsletter">
+                        <button type="submit" class="ripple-effect" aria-label="Subscribe to newsletter">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechAtheist. All rights reserved. | Designed for TechZephyr Hackathon</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <button class="fab" id="fab" aria-label="Contact us">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
