@@ -399,6 +399,14 @@ This project is created for the TechZephyr Hackathon Round 1.
 
 ## 👏 Acknowledgments
 
+This project was developed by me with the help of several AI tools for suggestions and ideation. I used the following AI assistants during development:
+
+- GitHub Copilot — code completions and in-editor suggestions
+- Anthropic Claude 4.5 — architecture brainstorming and problem-solving
+- Google Gemini 2.5 Pro — documentation and phrasing assistance
+
+These tools provided guidance and inspiration; all final design decisions, code reviews, and edits were performed by me.
+
 - TechZephyr team for organizing this hackathon
 - Font Awesome for icons
 - Inspiration from modern web design trends
