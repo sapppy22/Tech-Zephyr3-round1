@@ -187,7 +187,7 @@
             </div>
         </section>
 
-        <!-- Services Section (carousel switch.mp4, cards.png) -->
+        <!-- Services Section (carousel switch.mp4, cards.png) - Auto-Advancing Tabs -->
         <section class="services" id="services">
             <div class="container">
                 <div class="section-header scroll-reveal">
@@ -198,99 +198,154 @@
                     </p>
                 </div>
 
-                <div class="carousel-container">
-                    <div class="carousel" id="servicesCarousel">
-                        <div class="carousel-track">
-                            <div class="service-card scroll-reveal">
-                                <div class="card-icon">
-                                    <i class="fas fa-laptop-code"></i>
-                                </div>
-                                <h3>Web Development</h3>
-                                <p>Custom websites built with cutting-edge technologies for optimal performance and user experience.</p>
-                                <ul class="feature-list">
-                                    <li><i class="fas fa-check"></i> Responsive Design</li>
-                                    <li><i class="fas fa-check"></i> Fast Loading</li>
-                                    <li><i class="fas fa-check"></i> SEO Optimized</li>
-                                </ul>
-                            </div>
+                <!-- Auto-Advancing Service Tabs -->
+                <div class="service-tabs-container">
+                    <!-- Tab Navigation with Loading Animation -->
+                    <div class="service-tabs">
+                        <div class="tab-item active" data-tab="development">
+                            <div class="tab-icon"><i class="fas fa-laptop-code"></i></div>
+                            <span class="tab-label">Development</span>
+                            <div class="tab-progress"></div>
+                        </div>
+                        <div class="tab-item" data-tab="design">
+                            <div class="tab-icon"><i class="fas fa-paint-brush"></i></div>
+                            <span class="tab-label">Design</span>
+                            <div class="tab-progress"></div>
+                        </div>
+                        <div class="tab-item" data-tab="marketing">
+                            <div class="tab-icon"><i class="fas fa-chart-line"></i></div>
+                            <span class="tab-label">Marketing</span>
+                            <div class="tab-progress"></div>
+                        </div>
+                        <div class="tab-item" data-tab="cloud">
+                            <div class="tab-icon"><i class="fas fa-cloud"></i></div>
+                            <span class="tab-label">Cloud & AI</span>
+                            <div class="tab-progress"></div>
+                        </div>
+                    </div>
 
-                            <div class="service-card scroll-reveal">
-                                <div class="card-icon">
-                                    <i class="fas fa-mobile-alt"></i>
+                    <!-- Tab Content Cards -->
+                    <div class="tab-content-wrapper">
+                        <!-- Development Tab -->
+                        <div class="tab-content active" data-content="development">
+                            <div class="service-cards-grid">
+                                <div class="service-card-modern">
+                                    <div class="card-icon-modern">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                    <h3>Web Development</h3>
+                                    <p>Custom websites built with cutting-edge technologies for optimal performance and user experience.</p>
+                                    <ul class="feature-list-modern">
+                                        <li><i class="fas fa-check-circle"></i> Responsive Design</li>
+                                        <li><i class="fas fa-check-circle"></i> Fast Loading</li>
+                                        <li><i class="fas fa-check-circle"></i> SEO Optimized</li>
+                                    </ul>
                                 </div>
-                                <h3>Mobile Apps</h3>
-                                <p>Native and cross-platform mobile applications that engage users and deliver seamless experiences.</p>
-                                <ul class="feature-list">
-                                    <li><i class="fas fa-check"></i> iOS & Android</li>
-                                    <li><i class="fas fa-check"></i> Cloud Integration</li>
-                                    <li><i class="fas fa-check"></i> Push Notifications</li>
-                                </ul>
+                                <div class="service-card-modern">
+                                    <div class="card-icon-modern">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <h3>Mobile Apps</h3>
+                                    <p>Native and cross-platform mobile applications that engage users and deliver seamless experiences.</p>
+                                    <ul class="feature-list-modern">
+                                        <li><i class="fas fa-check-circle"></i> iOS & Android</li>
+                                        <li><i class="fas fa-check-circle"></i> Cloud Integration</li>
+                                        <li><i class="fas fa-check-circle"></i> Push Notifications</li>
+                                    </ul>
+                                </div>
                             </div>
+                        </div>
 
-                            <div class="service-card scroll-reveal">
-                                <div class="card-icon">
-                                    <i class="fas fa-paint-brush"></i>
+                        <!-- Design Tab -->
+                        <div class="tab-content" data-content="design">
+                            <div class="service-cards-grid">
+                                <div class="service-card-modern">
+                                    <div class="card-icon-modern">
+                                        <i class="fas fa-paint-brush"></i>
+                                    </div>
+                                    <h3>UI/UX Design</h3>
+                                    <p>Beautiful, intuitive interfaces designed with user psychology and conversion optimization in mind.</p>
+                                    <ul class="feature-list-modern">
+                                        <li><i class="fas fa-check-circle"></i> User Research</li>
+                                        <li><i class="fas fa-check-circle"></i> Wireframing</li>
+                                        <li><i class="fas fa-check-circle"></i> Prototyping</li>
+                                    </ul>
                                 </div>
-                                <h3>UI/UX Design</h3>
-                                <p>Beautiful, intuitive interfaces designed with user psychology and conversion optimization in mind.</p>
-                                <ul class="feature-list">
-                                    <li><i class="fas fa-check"></i> User Research</li>
-                                    <li><i class="fas fa-check"></i> Wireframing</li>
-                                    <li><i class="fas fa-check"></i> Prototyping</li>
-                                </ul>
+                                <div class="service-card-modern">
+                                    <div class="card-icon-modern">
+                                        <i class="fas fa-palette"></i>
+                                    </div>
+                                    <h3>Brand Identity</h3>
+                                    <p>Create memorable brand experiences with cohesive visual identities that resonate with your audience.</p>
+                                    <ul class="feature-list-modern">
+                                        <li><i class="fas fa-check-circle"></i> Logo Design</li>
+                                        <li><i class="fas fa-check-circle"></i> Brand Guidelines</li>
+                                        <li><i class="fas fa-check-circle"></i> Visual Systems</li>
+                                    </ul>
+                                </div>
                             </div>
+                        </div>
 
-                            <div class="service-card scroll-reveal">
-                                <div class="card-icon">
-                                    <i class="fas fa-chart-line"></i>
+                        <!-- Marketing Tab -->
+                        <div class="tab-content" data-content="marketing">
+                            <div class="service-cards-grid">
+                                <div class="service-card-modern">
+                                    <div class="card-icon-modern">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <h3>Digital Marketing</h3>
+                                    <p>Data-driven marketing strategies that boost your online presence and drive measurable growth.</p>
+                                    <ul class="feature-list-modern">
+                                        <li><i class="fas fa-check-circle"></i> SEO & SEM</li>
+                                        <li><i class="fas fa-check-circle"></i> Social Media</li>
+                                        <li><i class="fas fa-check-circle"></i> Analytics</li>
+                                    </ul>
                                 </div>
-                                <h3>Digital Marketing</h3>
-                                <p>Data-driven marketing strategies that boost your online presence and drive measurable growth.</p>
-                                <ul class="feature-list">
-                                    <li><i class="fas fa-check"></i> SEO & SEM</li>
-                                    <li><i class="fas fa-check"></i> Social Media</li>
-                                    <li><i class="fas fa-check"></i> Analytics</li>
-                                </ul>
+                                <div class="service-card-modern">
+                                    <div class="card-icon-modern">
+                                        <i class="fas fa-bullhorn"></i>
+                                    </div>
+                                    <h3>Content Strategy</h3>
+                                    <p>Engaging content that tells your story and connects with your target audience effectively.</p>
+                                    <ul class="feature-list-modern">
+                                        <li><i class="fas fa-check-circle"></i> Content Planning</li>
+                                        <li><i class="fas fa-check-circle"></i> Copywriting</li>
+                                        <li><i class="fas fa-check-circle"></i> Video Production</li>
+                                    </ul>
+                                </div>
                             </div>
+                        </div>
 
-                            <div class="service-card scroll-reveal">
-                                <div class="card-icon">
-                                    <i class="fas fa-cloud"></i>
+                        <!-- Cloud & AI Tab -->
+                        <div class="tab-content" data-content="cloud">
+                            <div class="service-cards-grid">
+                                <div class="service-card-modern">
+                                    <div class="card-icon-modern">
+                                        <i class="fas fa-cloud"></i>
+                                    </div>
+                                    <h3>Cloud Solutions</h3>
+                                    <p>Scalable cloud infrastructure and migration services for modern, flexible business operations.</p>
+                                    <ul class="feature-list-modern">
+                                        <li><i class="fas fa-check-circle"></i> AWS & Azure</li>
+                                        <li><i class="fas fa-check-circle"></i> DevOps</li>
+                                        <li><i class="fas fa-check-circle"></i> Security</li>
+                                    </ul>
                                 </div>
-                                <h3>Cloud Solutions</h3>
-                                <p>Scalable cloud infrastructure and migration services for modern, flexible business operations.</p>
-                                <ul class="feature-list">
-                                    <li><i class="fas fa-check"></i> AWS & Azure</li>
-                                    <li><i class="fas fa-check"></i> DevOps</li>
-                                    <li><i class="fas fa-check"></i> Security</li>
-                                </ul>
-                            </div>
-
-                            <div class="service-card scroll-reveal">
-                                <div class="card-icon">
-                                    <i class="fas fa-robot"></i>
+                                <div class="service-card-modern">
+                                    <div class="card-icon-modern">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <h3>AI Integration</h3>
+                                    <p>Harness the power of artificial intelligence to automate processes and gain valuable insights.</p>
+                                    <ul class="feature-list-modern">
+                                        <li><i class="fas fa-check-circle"></i> Machine Learning</li>
+                                        <li><i class="fas fa-check-circle"></i> Chatbots</li>
+                                        <li><i class="fas fa-check-circle"></i> Predictive Analytics</li>
+                                    </ul>
                                 </div>
-                                <h3>AI Integration</h3>
-                                <p>Harness the power of artificial intelligence to automate processes and gain insights.</p>
-                                <ul class="feature-list">
-                                    <li><i class="fas fa-check"></i> Machine Learning</li>
-                                    <li><i class="fas fa-check"></i> Chatbots</li>
-                                    <li><i class="fas fa-check"></i> Predictive Analytics</li>
-                                </ul>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="carousel-controls">
-                        <button class="carousel-btn prev" id="prevBtn" aria-label="Previous slide">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="carousel-btn next" id="nextBtn" aria-label="Next slide">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="carousel-indicators" id="carouselIndicators"></div>
                 </div>
             </div>
         </section>
@@ -474,7 +529,7 @@
             </div>
         </section>
 
-        <!-- Clients Section (customer-section.mp4) -->
+        <!-- Clients Section (customer-section.mp4) - Rotating Logos -->
         <section class="clients" id="clients">
             <div class="container">
                 <div class="section-header scroll-reveal">
@@ -482,40 +537,44 @@
                     <h2 class="section-title">Trusted By Industry Leaders</h2>
                 </div>
 
-                <div class="clients-marquee">
-                    <div class="clients-track">
-                        <div class="client-logo">
-                            <i class="fab fa-google"></i>
-                            <span>Google</span>
-                        </div>
-                        <div class="client-logo">
-                            <i class="fab fa-microsoft"></i>
-                            <span>Microsoft</span>
-                        </div>
-                        <div class="client-logo">
-                            <i class="fab fa-apple"></i>
-                            <span>Apple</span>
-                        </div>
-                        <div class="client-logo">
-                            <i class="fab fa-amazon"></i>
-                            <span>Amazon</span>
-                        </div>
-                        <div class="client-logo">
-                            <i class="fab fa-facebook"></i>
-                            <span>Meta</span>
-                        </div>
-                        <div class="client-logo">
-                            <i class="fab fa-spotify"></i>
-                            <span>Spotify</span>
-                        </div>
-                        <div class="client-logo">
-                            <i class="fab fa-netflix"></i>
-                            <span>Netflix</span>
-                        </div>
-                        <div class="client-logo">
-                            <i class="fab fa-airbnb"></i>
-                            <span>Airbnb</span>
-                        </div>
+                <!-- Rotating Logo Grid -->
+                <div class="client-logos-grid">
+                    <!-- Row 1 -->
+                    <div class="client-logo-slot" data-logos='["google", "microsoft", "apple"]'>
+                        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google" class="client-logo-img active">
+                        <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" alt="Microsoft" class="client-logo-img">
+                        <img src="https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png" alt="Apple" class="client-logo-img">
+                    </div>
+                    
+                    <div class="client-logo-slot" data-logos='["netflix", "spotify", "airbnb"]'>
+                        <img src="https://images.ctfassets.net/4cd45et68cgf/7LrExJ6PAj6MSIPkDyCO86/542b1dfabbf3959908f69be546879952/Netflix-Brand-Logo.png" alt="Netflix" class="client-logo-img active">
+                        <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png" alt="Spotify" class="client-logo-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" alt="Airbnb" class="client-logo-img">
+                    </div>
+                    
+                    <div class="client-logo-slot" data-logos='["stripe", "slack", "uber"]'>
+                        <img src="https://images.ctfassets.net/fzn2n1nzq965/HTTOloNPhisV9P4hlMPNA/cacf1bb88b9fc492dfad34378d844280/Stripe_icon_-_square.svg" alt="Stripe" class="client-logo-img active">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" alt="Slack" class="client-logo-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" alt="Uber" class="client-logo-img">
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="client-logo-slot" data-logos='["notion", "figma", "github"]'>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" alt="Notion" class="client-logo-img active">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma" class="client-logo-img">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="client-logo-img">
+                    </div>
+                    
+                    <div class="client-logo-slot" data-logos='["amazon", "meta", "tesla"]'>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="client-logo-img active">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" class="client-logo-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Tesla_logo.png" alt="Tesla" class="client-logo-img">
+                    </div>
+                    
+                    <div class="client-logo-slot" data-logos='["adobe", "shopify", "dropbox"]'>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Adobe_Corporate_Logo.png" alt="Adobe" class="client-logo-img active">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify" class="client-logo-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Dropbox_logo_2017.svg" alt="Dropbox" class="client-logo-img">
                     </div>
                 </div>
             </div>

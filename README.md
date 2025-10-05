@@ -68,11 +68,26 @@ This landing page represents TechAtheist, a modern analytics platform, incorpora
    - System-level CSS custom properties
 
 8. **Customer Section** (`customer-section.mp4`)
-   - Animated marquee of client logos
-   - Infinite scroll effect
-   - Hover interactions
+   - Auto-rotating client logos with 3x2 grid layout
+   - Real company logos via Clearbit API
+   - Smooth fade and scale transitions
+   - Staggered animation timing (500ms between slots)
+   - 3-second rotation intervals
+   - Includes: Raycast, Retool, Mercury, Google, Microsoft, Apple, Stripe, Spotify, Slack, Netflix, Airbnb, Uber, Notion, Figma, Vercel
+   - Responsive grid (3x2 → 2x3 → 1x6)
 
-9. **Interactive Navigation**
+9. **Auto-Advancing Service Tabs** ⭐ NEW!
+   - Tab-based service showcase with loading animation
+   - Progress bar fills at top of active tab
+   - Auto-advances every 5 seconds
+   - Click to manually switch tabs
+   - Smooth content fade transitions
+   - Keyboard navigation (Arrow keys)
+   - Pauses when scrolling away from section
+   - 2 service cards per tab
+   - Categories: Development, Design, Marketing, Cloud & AI
+
+10. **Interactive Navigation**
    - Active section highlighting
    - Smooth scroll to sections
    - Sticky header with scroll effects

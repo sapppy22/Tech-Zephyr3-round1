@@ -7,12 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
     initInteractiveHero();
     initParallax();
-    initCarousel();
+    initServiceTabs(); // New auto-advancing tabs instead of carousel
     initScrollReveal();
     initStatsCounter();
     initRippleEffect();
     initFloatingButtons();
     initSmoothScroll();
+    initRotatingLogos(); // New rotating client logos
 });
 
 // ===================================
@@ -259,159 +260,133 @@ function initParallax() {
 }
 
 // ===================================
-// Service Carousel
+// Auto-Advancing Service Tabs with Loading Animation
 // ===================================
-function initCarousel() {
-    const carousel = document.getElementById('servicesCarousel');
-    const track = carousel.querySelector('.carousel-track');
-    const cards = carousel.querySelectorAll('.service-card');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const indicatorsContainer = document.getElementById('carouselIndicators');
+function initServiceTabs() {
+    const tabs = document.querySelectorAll('.tab-item');
+    const contents = document.querySelectorAll('.tab-content');
     
-    let currentIndex = 0;
-    let cardsPerView = 3;
-    let cardWidth = 0;
-    let gap = 30;
+    if (!tabs.length || !contents.length) return;
     
-    // Calculate cards per view based on screen width
-    function updateCardsPerView() {
-        if (window.innerWidth <= 640) {
-            cardsPerView = 1;
-        } else if (window.innerWidth <= 968) {
-            cardsPerView = 2;
-        } else {
-            cardsPerView = 3;
+    let currentTabIndex = 0;
+    let autoAdvanceInterval;
+    let progressInterval;
+    const AUTO_ADVANCE_DURATION = 5000; // 5 seconds per tab
+    const PROGRESS_UPDATE_INTERVAL = 50; // Update progress every 50ms
+    
+    // Switch to a specific tab
+    function switchTab(index) {
+        // Remove active class from all tabs and contents
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
+            // Reset progress bar
+            const progress = tab.querySelector('.tab-progress');
+            if (progress) {
+                progress.style.width = '0';
+                progress.style.animation = 'none';
+            }
+        });
+        contents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to selected tab and content
+        tabs[index].classList.add('active');
+        contents[index].classList.add('active');
+        currentTabIndex = index;
+        
+        // Start progress animation for active tab
+        const activeProgress = tabs[index].querySelector('.tab-progress');
+        if (activeProgress) {
+            // Force reflow to restart animation
+            void activeProgress.offsetWidth;
+            activeProgress.style.animation = 'fillProgress 5s linear forwards';
         }
-        updateCarousel();
     }
     
-    // Create indicators
-    function createIndicators() {
-        indicatorsContainer.innerHTML = '';
-        const totalSlides = Math.ceil(cards.length / cardsPerView);
-        
-        for (let i = 0; i < totalSlides; i++) {
-            const indicator = document.createElement('div');
-            indicator.classList.add('indicator');
-            if (i === 0) indicator.classList.add('active');
-            indicator.addEventListener('click', () => goToSlide(i));
-            indicatorsContainer.appendChild(indicator);
+    // Auto-advance to next tab
+    function autoAdvance() {
+        const nextIndex = (currentTabIndex + 1) % tabs.length;
+        switchTab(nextIndex);
+    }
+    
+    // Start auto-advancing
+    function startAutoAdvance() {
+        stopAutoAdvance(); // Clear any existing interval
+        autoAdvanceInterval = setInterval(autoAdvance, AUTO_ADVANCE_DURATION);
+    }
+    
+    // Stop auto-advancing
+    function stopAutoAdvance() {
+        if (autoAdvanceInterval) {
+            clearInterval(autoAdvanceInterval);
         }
     }
     
-    // Update carousel position
-    function updateCarousel() {
-        const containerWidth = carousel.offsetWidth;
-        cardWidth = (containerWidth - (gap * (cardsPerView - 1))) / cardsPerView;
-        
-        cards.forEach(card => {
-            card.style.minWidth = `${cardWidth}px`;
+    // Add click handlers to tabs
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+            switchTab(index);
+            stopAutoAdvance();
+            // Restart auto-advance after user interaction
+            setTimeout(startAutoAdvance, AUTO_ADVANCE_DURATION);
         });
         
-        const offset = -(currentIndex * (cardWidth + gap));
-        track.style.transform = `translateX(${offset}px)`;
-        
-        updateIndicators();
-    }
-    
-    // Update active indicator
-    function updateIndicators() {
-        const indicators = indicatorsContainer.querySelectorAll('.indicator');
-        indicators.forEach((indicator, index) => {
-            indicator.classList.toggle('active', index === Math.floor(currentIndex / cardsPerView));
-        });
-    }
-    
-    // Go to specific slide
-    function goToSlide(index) {
-        const maxIndex = cards.length - cardsPerView;
-        currentIndex = Math.max(0, Math.min(index * cardsPerView, maxIndex));
-        updateCarousel();
-    }
-    
-    // Next slide
-    function nextSlide() {
-        const maxIndex = cards.length - cardsPerView;
-        if (currentIndex < maxIndex) {
-            currentIndex++;
-            updateCarousel();
-        }
-    }
-    
-    // Previous slide
-    function prevSlide() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        }
-    }
-    
-    // Event listeners
-    prevBtn.addEventListener('click', prevSlide);
-    nextBtn.addEventListener('click', nextSlide);
-    
-    // Touch/swipe support
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    carousel.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
+        // Pause on hover
+        tab.addEventListener('mouseenter', stopAutoAdvance);
+        tab.addEventListener('mouseleave', startAutoAdvance);
     });
-    
-    carousel.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-    
-    function handleSwipe() {
-        if (touchStartX - touchEndX > 50) {
-            nextSlide();
-        }
-        if (touchEndX - touchStartX > 50) {
-            prevSlide();
-        }
-    }
     
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') prevSlide();
-        if (e.key === 'ArrowRight') nextSlide();
+        if (e.key === 'ArrowLeft') {
+            const prevIndex = currentTabIndex === 0 ? tabs.length - 1 : currentTabIndex - 1;
+            switchTab(prevIndex);
+            stopAutoAdvance();
+            setTimeout(startAutoAdvance, AUTO_ADVANCE_DURATION);
+        } else if (e.key === 'ArrowRight') {
+            const nextIndex = (currentTabIndex + 1) % tabs.length;
+            switchTab(nextIndex);
+            stopAutoAdvance();
+            setTimeout(startAutoAdvance, AUTO_ADVANCE_DURATION);
+        }
     });
     
-    // Initialize
-    createIndicators();
-    updateCardsPerView();
-    
-    // Update on resize
-    window.addEventListener('resize', () => {
-        updateCardsPerView();
+    // Pause auto-advance when page is not visible
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopAutoAdvance();
+        } else {
+            startAutoAdvance();
+        }
     });
     
-    // Auto-play (optional)
-    let autoplayInterval;
+    // Initialize - Start with first tab
+    switchTab(0);
+    startAutoAdvance();
     
-    function startAutoplay() {
-        autoplayInterval = setInterval(() => {
-            if (currentIndex >= cards.length - cardsPerView) {
-                currentIndex = 0;
-            } else {
-                currentIndex++;
-            }
-            updateCarousel();
-        }, 5000);
+    // Pause when user scrolls away from services section
+    const servicesSection = document.querySelector('.services');
+    if (servicesSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startAutoAdvance();
+                } else {
+                    stopAutoAdvance();
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        observer.observe(servicesSection);
     }
-    
-    function stopAutoplay() {
-        clearInterval(autoplayInterval);
-    }
-    
-    // Start autoplay
-    startAutoplay();
-    
-    // Stop autoplay on user interaction
-    carousel.addEventListener('mouseenter', stopAutoplay);
-    carousel.addEventListener('mouseleave', startAutoplay);
+}
+
+// ===================================
+// OLD Service Carousel (Deprecated - keeping for reference)
+// ===================================
+function initCarousel() {
+    // This function is now deprecated as we're using auto-advancing tabs
+    // Keeping it here in case you need to reference the old implementation
+    return;
 }
 
 // ===================================
@@ -739,6 +714,39 @@ function throttle(func, limit) {
             setTimeout(() => inThrottle = false, limit);
         }
     };
+}
+
+// ===================================
+// Rotating Client Logos
+// ===================================
+function initRotatingLogos() {
+    const logoSlots = document.querySelectorAll('.client-logo-slot');
+    
+    if (!logoSlots.length) return;
+    
+    logoSlots.forEach((slot, slotIndex) => {
+        const images = slot.querySelectorAll('.client-logo-img');
+        if (images.length <= 1) return; // No need to rotate if only 1 logo
+        
+        let currentIndex = 0;
+        
+        // Stagger the rotation start time for each slot
+        const startDelay = slotIndex * 500; // 500ms stagger between slots
+        
+        setTimeout(() => {
+            // Rotate logos every 3 seconds
+            setInterval(() => {
+                // Remove active class from current logo
+                images[currentIndex].classList.remove('active');
+                
+                // Move to next logo (loop back to start)
+                currentIndex = (currentIndex + 1) % images.length;
+                
+                // Add active class to next logo
+                images[currentIndex].classList.add('active');
+            }, 3000); // Change every 3 seconds
+        }, startDelay);
+    });
 }
 
 // Apply throttle to scroll events for better performance
