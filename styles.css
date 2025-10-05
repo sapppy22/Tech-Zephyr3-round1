@@ -402,6 +402,80 @@ section {
     50% { transform: translateY(-15px) scale(0.92); }
 }
 
+/* Footer social links */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+    position: relative;
+}
+.social-links a:hover {
+    background: var(--bg-secondary);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+.social-links i {
+    display: none; /* hide Font Awesome icons by default so SVG fallbacks render reliably */
+}
+.social-links .icon-fallback {
+    display: inline-block; /* show SVG fallback by default */
+    width: 20px;
+    height: 20px;
+    color: inherit;
+}
+.social-links .icon-fallback svg,
+.social-links .icon-fallback path {
+    fill: currentColor;
+}
+
+/* Accessible hidden text */
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
+    border: 0;
+    padding: 0;
+    margin: -1px;
+}
+
+@media (max-width: 640px) {
+    .social-links a {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* Strong overrides to ensure the SVG fallbacks show in the footer */
+.footer .social-links a {
+    background: rgba(255,255,255,0.04); /* subtle circle */
+    color: var(--primary-light) !important; /* make icon color visible */
+}
+.footer .social-links a .icon-fallback {
+    display: inline-block !important;
+    width: 22px !important;
+    height: 22px !important;
+}
+.footer .social-links a .icon-fallback path {
+    fill: currentColor !important;
+}
+.footer .social-links a i {
+    display: none !important; /* keep only the SVG visible to avoid duplicate icons */
+}
+
 .illustration.active {
     animation: none;
 }
